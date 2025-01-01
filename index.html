@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text to Speech Tool</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Text-to-Speech Web Tool</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Text to Speech Tool</h1>
-        <textarea id="text-input" placeholder="Enter text here..."></textarea>
-        <br>
-        <button onclick="speakText()">Speak</button>
-        <button onclick="stopSpeech()">Stop</button>
-        <button onclick="pauseSpeech()">Pause</button>
-        <button onclick="resumeSpeech()">Resume</button>
-        <br>
-        <select id="voices"></select>
-    </div>
+    <h1>Text-to-Speech Web Tool</h1>
 
-    <script src="app.js"></script>
+    <textarea id="textInput" rows="4" cols="50" placeholder="Type something here..."></textarea><br><br>
+
+    <label for="voiceSelect">Choose a voice:</label>
+    <select id="voiceSelect">
+        <option value="">Select Voice</option>
+    </select><br><br>
+
+    <button onclick="speakText()">Speak</button>
+    <button onclick="stopSpeech()">Stop</button>
+    <button onclick="saveAsMP3()">Save as MP3</button>
+
+    <!-- Add the Recorder.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/recorder-js@1.0.0/dist/recorder.min.js"></script>
+    
+    <script src="app.js"></script> <!-- Your JS file -->
 </body>
 </html>
+
